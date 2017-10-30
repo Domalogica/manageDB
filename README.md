@@ -19,7 +19,7 @@ connect_mysql = MysqlPython('host.ip.address', 'user', 'password', 'database')
 
 ```
 conditional_query = "id = %s"
-result = connect_mysql.select("table", conditional_query, "morning", "upload", id = "245919343")
+result = connect_mysql.select("table", conditional_query, *["morning"], **{'id': "245919343"})
 ```
 
 **Результат:**
@@ -45,7 +45,7 @@ result = connect_mysql.select_advanced(sql_query, ('car_make', 'nissan'), ('car_
 Вставка данных интуитивно понятна, мы будем ссылаться на столбец и значения
 
 ```
-result = connect_mysql.insert('table', car_make = 'ford' ,car_model = 'escort', car_year = '2005')
+result = connect_mysql.insert('report', *["id", "morning"], **{'id': "245919343", 'morning': "Hello World!"})
 ```
 
 **Результат:**
@@ -57,8 +57,8 @@ result = connect_mysql.insert('table', car_make = 'ford' ,car_model = 'escort', 
 Для обновления данных требуется только таблица, условный запрос и укажите столбцы, которые вы хотите обновить
 
 ```
-conditional_query = 'car_make = %s'
-result = connect_mysql.update('table', conditional_query, 'nissan', car_model='escort', car_year='2005')
+conditional_query = 'id = %s'
+result = connect_mysql.update('table', conditional_query, *["245919343"], **{'morning': "Hi, name is Ahmad"})
 ```
 
 **Результат:**
@@ -71,7 +71,7 @@ result = connect_mysql.update('table', conditional_query, 'nissan', car_model='e
 
 ```
 conditional_query = 'id = %s'
-result = connect_mysql.delete('table', conditional_query, 'nissan')
+result = connect_mysql.delete('report', conditional_query, *["245919343"])
 ```
 
 **Результат:**

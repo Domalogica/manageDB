@@ -131,3 +131,28 @@ class MysqlPython(object):
 
         self.__close()
         return result
+
+
+connect_mysql = MysqlPython('127.0.0.1', 'root', '7087', 'report')
+
+
+#select
+conditional_query = "id = %s"
+result = connect_mysql.select("report", conditional_query, *["morning"], **{'id': "245919343"})
+print(result)
+
+#update
+# conditional_query = 'id = %s'
+# result = connect_mysql.update('report', conditional_query, *["245919343"], **{'morning': "Hi, name is Ahmad"})
+# print(result)
+
+#delete
+# conditional_query = 'id = %s'
+# result = connect_mysql.delete('report', conditional_query, *["245919343"])
+# print(result)
+
+#insert
+# result = connect_mysql.insert('report', *["id", "morning"], **{'id': "245919343", 'morning': "Hello World!"})
+# print(result)
+
+
