@@ -110,7 +110,6 @@ class MysqlPython(object):
         self.__session.execute(query, values)
         self.__connection.commit()
 
-        # Obtain rows affected
         delete_rows = self.__session.rowcount
         self.__close()
 

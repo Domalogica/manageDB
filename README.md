@@ -45,7 +45,7 @@ result = connect_mysql.select_advanced(sql_query, ('car_make', 'nissan'), ('car_
 Вставка данных интуитивно понятна, мы будем ссылаться на столбец и значения
 
 ```
-result = connect_msyql.insert('table', car_make = 'ford' ,car_model = 'escort', car_year = '2005')
+result = connect_mysql.insert('table', car_make = 'ford' ,car_model = 'escort', car_year = '2005')
 ```
 
 **Результат:**
