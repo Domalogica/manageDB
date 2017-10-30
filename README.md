@@ -40,20 +40,6 @@ result = connect_mysql.select_advanced(sql_query, ('car_make', 'nissan'), ('car_
 	Функция возвращает список или пустой список в случае отсутствия ничего.
 
 ---
-    
-#### SELECT с несколькими условиями
-Если вам нужно получить информацию с более чем одним условием, вы можете использовать функцию
-`select_advanced` , где столбцы, которые вам нужно получить, ссылаются на `args` а на условные обозначения указаны `tuples`.
-
-```
-sql_query = 'SELECT C.cylinder FROM car C WHERE C.car_make = %s AND C.car_model = %s'
-result = connect_mysql.select_advanced(sql_query, ('car_make', 'nissan'), ('car_model', 'altima'))
-```
-
-**Результат:**
-	Функция возвращает список или пустой список в случае отсутствия ничего.
-
----
 
 #### INSERT - вставка данных
 Вставка данных интуитивно понятна, мы будем ссылаться на столбец и значения
@@ -80,7 +66,7 @@ result = connect_mysql.update('table', conditional_query, 'nissan', car_model='e
 
 ---
 
-#### UPDATE - удаление данных
+#### DELETE - удаление данных
 Удалить данные очень просто, как вставка, просто укажите столбец как условие и таблицу.
 
 ```
