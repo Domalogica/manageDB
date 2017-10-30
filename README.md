@@ -1,4 +1,4 @@
-manageDB
+MySQL Python - manageDB
 ===========
 
 ## Описание
