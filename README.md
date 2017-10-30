@@ -1,4 +1,4 @@
-manageDB
+manageDB - библиотека для работы с БД
 ===========
 
 ## Описание
@@ -56,7 +56,7 @@ result = connect_mysql.select_advanced(sql_query, ('car_make', 'nissan'), ('car_
 ---
 
 #### INSERT - вставка данных
-#Вставка данных интуитивно понятна, мы будем ссылаться на столбец и значения
+Вставка данных интуитивно понятна, мы будем ссылаться на столбец и значения
 
 ```
 result = connect_msyql.insert('table', car_make = 'ford' ,car_model = 'escort', car_year = '2005')
@@ -91,6 +91,6 @@ result = connect_mysql.delete('table', conditional_query, 'nissan')
 **Результат:**
 	Функция возвращает количество удаленных строк.
 
-## Requirements
+## Требования
 
 PyMySQL
